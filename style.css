@@ -23,6 +23,12 @@
   width: 100%;
 }
 
+.header {
+  text-align: center;
+  background-color: yellow;
+  height: 5vw;
+}
+
 .items {
   display: flex;
   flex-basis: 70%;
@@ -72,5 +78,9 @@
 .cart .cart__title {
   flex-basis: 1;
   font-size: 16pt;
+  text-align: center;
+}
+
+.loading {
   text-align: center;
 }

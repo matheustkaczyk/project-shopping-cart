@@ -6,17 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Mercado Tryber</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   </head>
 
   <body>
-    <header> Mercado Tryber </header>
+    <header class="header fs-3"><img class="image-logo" src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.14.8/mercadolibre/logo__small.png"><img> Mercado Tryber </header>
     <section class="container">
       <section class="items"></section>
       <section class="cart">
         <span class="cart__title">Carrinho de compras</span>
-        <p class="total-price"></p>
-        <button class="empty-cart">Esvaziar carrinho</button>
-        <span class="loading">loading...</span>
+        <p class="total-price">TOTAL :</p>
+        <button class="empty-cart btn btn-danger">Esvaziar carrinho</button>
+        <span class="loading alert alert-primary">loading...</span>
         <ul class="cart__items"></ol>
       </section>
     </section>

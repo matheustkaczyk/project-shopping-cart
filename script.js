@@ -5,6 +5,7 @@ const cartItem = document.getElementsByClassName('cart__item');
 const emptyCart = document.querySelector('.empty-cart');
 const loading = document.querySelector('.loading');
 const totalPrice = document.querySelector('.total-price');
+const priced = document.createElement('span');
 const arrPrices = [];
 
 function createProductImageElement(imageSource) {
@@ -79,12 +80,12 @@ const getApi = async () => {
 };
 
 // vai populando o arrayPrices com os preços do itens pego no response.base_price e o coloca no totalprice.innerhtml.
-const getPrice = (price) => {
+const getPrice = async (price) => {
   arrPrices.push(price);
-  console.log(arrPrices);
   const sumCart = arrPrices.reduce((acc, curr) => acc + curr).toFixed(2);
-  console.log(sumCart);
-  totalPrice.innerText = (`TOTAL : ${sumCart}`);
+  priced.innerHTML = sumCart;
+  totalPrice.innerHTML = `TOTAL R$: `
+  totalPrice.appendChild(priced);
 };
 
 // Traz o id pego pelo evento e o pesquisa no fetch. já chama a função do save local storage
@@ -111,6 +112,7 @@ const clearCart = () => {
   emptyCart.addEventListener('click', () => {
     localStorage.clear();
     totalPrice.innerHTML = '';
+    arrPrices.length = 0;
     if (cartItems.firstChild) {
       cartItems.innerHTML = '';
     }
@@ -118,8 +120,8 @@ const clearCart = () => {
 };
 
 window.onload = function onload() {
+  getLocalStorage();
   getApi();
   evtBtn();
-  getLocalStorage();
   clearCart();
  };
